@@ -12,6 +12,7 @@ id="app"
 >
 <ul>
     <li v-for='fruit of fruits'>{{fruit}}</li>
+    <li v-for='product of products'>{{product.title}}</li>
     <div
     id="input-container"
     >
@@ -21,7 +22,13 @@ id="app"
         id="button"
         >add</button>
     </div>
+    <button
+    @click="fetchData"
+    >
+        fetch
+    </button>
 </ul>
+<box :is-visible="false"></box>
 </div>
 </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>

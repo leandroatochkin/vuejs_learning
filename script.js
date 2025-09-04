@@ -1,9 +1,16 @@
+Vue.component('box',{
+    props: ['isVisible'],
+    template: `<div class="box" v-if="isVisible">ssss</div>`
+
+})
+
 const app = new Vue({
     el: '#app',
     data: {
         message: 'Hello Vue!',
         fruits: ['Apple', 'Banana', 'Cherry'],
-        newFruit: ''
+        newFruit: '',
+        products: []
     },
     methods: {
         addFruit(){
@@ -13,6 +20,12 @@ const app = new Vue({
                 alert(`no fruit`)
             }
             this.newFruit = ''
+        },
+        fetchData(){
+            fetch('https://fakestoreapi.com/products/')
+            .then(res=>res.json())            
+            .then(json=>this.products = [...json])
         }
     }
 })
+
