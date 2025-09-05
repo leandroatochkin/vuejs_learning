@@ -12,6 +12,8 @@ id="app"
 >
 <ul>
     <li v-for='fruit of fruits'>{{fruit}}</li>
+    <!-- remember to translate props camelCase to kebab-case -->
+    <spinner :is-loading="loading"></spinner> 
     <li v-for='product of products'>{{product.title}}</li>
     <div
     id="input-container"
@@ -28,7 +30,10 @@ id="app"
         fetch
     </button>
 </ul>
+ <!-- remember to translate props camelCase to kebab-case -->
 <box :is-visible="false"></box>
+<div id="change-color" :style="{'background-color': changeColor}"></div>
+<button @click="counter++">+</button>
 </div>
 </body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
