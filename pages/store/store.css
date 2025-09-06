@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    --bg: #f9f9f9;
+    --text: #333;
+    font-family: "Sansation", sans-serif;
+}
+
+#store{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product{
+    height: 500px;
+    width: auto;
+    max-width: 250px;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.product-image{
+    max-height: 250px;
+    width: auto;
+    max-width: 200px;
+}
+
+@media screen and (min-width: 600px) {
+    #store{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
