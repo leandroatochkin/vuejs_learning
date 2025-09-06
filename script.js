@@ -19,6 +19,9 @@ const app = new Vue({
         products: [],
         counter: 0,
         loading: false,
+        name: '',
+        email: '',
+        password: ''
     },
     methods: {
         addFruit(){
@@ -36,6 +39,22 @@ const app = new Vue({
             .then(json=>this.products = [...json])
             .catch(e => console.log(e))
             .finally(() => this.loading = false)
+        },
+        onSubmit(){
+            try{
+                this.loading = true
+                if(this.name.trim() === '' || this.email.trim() === '' || this.password.trim() === '') return
+                const user = {
+                    name: this.name,
+                    email: this.email,
+                    password: this.password
+                }
+                console.log(user)
+            } catch(e){
+                console.log(e)
+            } finally { 
+                this.loading = false
+            }
         }
     },
     computed: {

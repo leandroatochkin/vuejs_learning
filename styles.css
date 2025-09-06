@@ -1,3 +1,8 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
 #input-container{
     background-color: red;
 }
@@ -30,3 +35,4 @@
         height: 50px;
         width: 50px;
     }
+
